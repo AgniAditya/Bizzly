@@ -10,6 +10,7 @@ function PromptInput() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission logic here
+    if(input.trim() === '') return; // Prevent sending empty messages
     const message : Message = {
       id: Date.now().toString(),
       text: input.trim(),
