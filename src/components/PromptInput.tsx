@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { Message } from '../types/Messages';
+import { useDispatch } from 'react-redux';
+import { addMessage } from '../store/features/messagesSlice';
 
 function PromptInput() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState<string>('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -14,7 +17,7 @@ function PromptInput() {
       timestamp: new Date()
     };
 
-    console.log(message); // Placeholder for sending message to backend or updating state
+    dispatch(addMessage(message)); // Add message to Redux store
     setInput(''); // Clear input after sending
   };
 
