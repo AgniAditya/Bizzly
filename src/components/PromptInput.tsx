@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Message } from '../types/Messages';
 import { useDispatch } from 'react-redux';
 import { addMessage } from '../store/features/messagesSlice';
+import { SendHorizontal } from 'lucide-react';
 
 function PromptInput() {
   const [input, setInput] = useState<string>('');
@@ -38,7 +39,9 @@ function PromptInput() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
             />
-            <button type="submit" className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Send</button>
+            <button type="submit" 
+            className="p-4 bg-white text-black rounded-full hover:bg-gray-200 flex items-center justify-center"
+            ><SendHorizontal /></button>
         </form>
     </div>
   )
