@@ -1,10 +1,23 @@
+import { useSelector } from 'react-redux';
+import { Message } from "../types/Messages"
+import { RootState } from "../store/store";
 import ConversationBox from "./ConversationBox"
 import PromptInput from "./PromptInput"
+import Logo from './Logo';
 
 function Main() {
+  const messages: Message[] = useSelector((store: RootState) => store.messages.messages);
+
   return (
-    <div className='Main w-full h-full flex flex-col items-center justify-between gap-5 py-10 bg-blue-50'>
-      <ConversationBox />
+    <div className='Main w-full h-full flex flex-col items-center justify-between gap-5 py-10'>
+      { messages.length === 0 ? (
+          <div className="w-full h-full flex flex-col items-center justify-center gap-5">
+            <Logo />
+            <div className="text-center text-gray-500">
+              Start the conversation by typing a message below!
+            </div>
+          </div>
+        ) : <ConversationBox /> }
       <PromptInput />
     </div>
   )
