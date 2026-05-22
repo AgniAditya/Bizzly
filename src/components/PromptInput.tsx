@@ -23,7 +23,7 @@ function PromptInput() {
   };
 
   return (
-    <div className="w-4xl flex">
+    <div className="w-3xl flex">
         <form 
         onSubmit={(e) => handleSubmit(e)}
         onKeyDown={(e) => {
@@ -33,7 +33,7 @@ function PromptInput() {
         }} 
         className="w-full flex items-center">
             <textarea
-                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full min-h-15 p-2 rounded-lg bg-[#333] text-white placeholder:text-gray-500 focus:outline-none resize-none"
                 placeholder="Type your message..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
