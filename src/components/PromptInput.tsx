@@ -23,7 +23,14 @@ function PromptInput() {
 
   return (
     <div className="w-4xl flex">
-        <form onSubmit={(e) => handleSubmit(e)} className="w-full flex items-center">
+        <form 
+        onSubmit={(e) => handleSubmit(e)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && !e.shiftKey) {
+            handleSubmit(e);
+          }
+        }} 
+        className="w-full flex items-center">
             <textarea
                 className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Type your message..."
