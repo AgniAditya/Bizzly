@@ -24,7 +24,7 @@ function PromptInput() {
   };
 
   return (
-    <div className="w-3xl flex">
+    <div className="PromptInput w-3xl">
         <form 
         onSubmit={(e) => handleSubmit(e)}
         onKeyDown={(e) => {

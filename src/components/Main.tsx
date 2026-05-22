@@ -11,9 +11,9 @@ function Main() {
   return (
     <div className='Main w-full h-full flex flex-col items-center justify-between gap-5 py-10'>
       { messages.length === 0 ? (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-5">
+          <div className="StartConversation w-full h-full flex flex-col items-center justify-center">
             <Logo />
-            <div className="text-center text-gray-500">
+            <div className="StartConversation-text text-center text-gray-500">
               Start the conversation by typing a message below!
             </div>
           </div>
